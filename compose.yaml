@@ -1,0 +1,6 @@
+﻿services:
+  templategenerator:
+    image: templategenerator
+    build:
+      context: .
+      dockerfile: TemplateGenerator/Dockerfile
