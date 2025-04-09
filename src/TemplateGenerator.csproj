@@ -8,6 +8,7 @@
 <!--        <PackAsTool>true</PackAsTool> &lt;!&ndash; Torna o projeto um CLI &ndash;&gt;-->
 <!--        <ToolCommandName>newprojeto</ToolCommandName> &lt;!&ndash; Nome do comando CLI &ndash;&gt;-->
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>TemplateGenerator</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
