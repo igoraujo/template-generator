@@ -18,13 +18,24 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="output\" />
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
         <PackageReference Include="Stubble.Core" Version="1.10.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Remove="templates\Console\{{projectName}}\src\Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="templates\Console\{{projectName}}\src\Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="templates\Console\{{projectName}}\src\Repositories\**" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,7 @@
+namespace {{projectName}}.Repositories.Interfaces;
+
+public interface IBaseRepository<T>
+{    
+    Task<T> GetByIdAsync(int id);    
+    Task<IEnumerable<T>> GetAllAsync();
+}

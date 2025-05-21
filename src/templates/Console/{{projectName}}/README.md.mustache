@@ -1,0 +1,60 @@
+
+## This Project 
+This project is a template for creating a new C# console application using the dotnet 8. It includes a basic structure with folders for borders, repositories, and use cases.
+It also includes a sample model, constant, enum, and exception helper.
+## Project Structure
+The project structure is organized into several folders, each serving a specific purpose:
+- **Borders**: Contains the borders of the application, including models, constants, helpers, and enums.
+- **Repositories**: Contains the repository interfaces, implementations, and queries.
+- **UseCases**: Contains the use case interfaces and implementations.
+- **Console**: Contains the main entry point of the application and the service that orchestrates the use cases.
+## Getting Started
+To get started with this project, follow these steps:
+1. Clone the repository to your local machine.
+2. Open the solution file in Visual Studio or your preferred IDE.
+3. Restore the NuGet packages by running `dotnet restore` in the terminal.
+4. Build the solution by running `dotnet build` in the terminal.
+5. Run the application by executing `dotnet run` in the terminal.
+6. Modify the code as needed to fit your requirements.
+7. Add your own models, constants, enums, and use cases as needed.
+8. Implement the repository interfaces and queries to interact with your data source.
+9. Test your application thoroughly to ensure it meets your requirements.
+10. Deploy your application to your desired environment.
+
+
+
+```shell
+console/
+    └── src/
+        ├── {{projectName}}.Console/
+        │   ├── {{projectName}}.Console.csproj.mustache
+        │   ├── Program.cs.mustache
+        │   └── MyService.cs.mustache
+        ├── {{projectName}}.Borders/
+        │   ├── {{projectName}}.Borders.csproj.mustache
+        │   ├── Models/
+        │   │   └── MyModel.cs.mustache
+        │   ├── Constants/
+        │   │   └── MyConstant.cs.mustache
+        │   ├── Helpers/
+        │   │   └── ExceptionHelper.cs.mustache
+        │   └── Enums/
+        │       └── MyEnum.cs.mustache
+        ├── {{projectName}}.Repositories/
+        │   ├── Interfaces/
+        │   │   ├── IBaseRepository.cs.mustache
+        │   │   └── IMyRepository.cs.mustache
+        │   ├── Repositories/
+        │   │   └── MyRepository.cs.mustache
+        │   ├── Queries/
+        │   │   └── MyQuery.cs.mustache
+        │   └── {{projectName}}.Repositories.csproj.mustache
+        └── {{projectName}}.UseCases/
+        │   ├── Interfaces/
+        │   │   ├── IBaseUseCase.cs.mustache
+        │   │   └── IMyUseCase.cs.mustache
+        │   ├──     /
+        │       └── MyRepository.cs.mustache
+        └── {{projectName}}.UseCases.csproj.mustache
+
+```

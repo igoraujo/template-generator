@@ -1,0 +1,31 @@
+using {{projectName}}.Borders.Models;
+
+namespace {{projectName}}.Repositories.Repositories;
+
+public class MyRepository : IMyRepository
+{
+    public Task<MyModel> FindByNameAsync(string name)
+    {
+        // Implementação fake
+        return Task.FromResult(new MyModel { Id = 1, Name = name });
+    }
+
+    public Task<MyModel> GetByIdAsync(int id)
+    {
+        return Task.FromResult(new MyModel { Id = id, Name = "Sample" });
+    }
+
+    public Task<IEnumerable<MyModel>> GetAllAsync()
+    {
+        return Task.FromResult<IEnumerable<MyModel>>(new List<MyModel>());
+    }
+}
+
+public static class RepositoryServiceCollectionExtensions
+{
+    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddTransient<IMyRepository, MyRepository>();
+        return services;
+    }
+}

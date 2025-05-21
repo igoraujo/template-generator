@@ -1,0 +1,32 @@
+using Microsoft.Extensions.Logging;
+using {{projectName}}.Repositories.Interfaces;
+
+namespace {{projectName}}.UseCases;
+
+public class MyUseCase : IMyUseCase
+{
+    private readonly ILogger<MyUseCase> _logger;
+    private readonly IMyRepository _repository;
+
+    public MyUseCase(ILogger<MyUseCase> logger, IMyRepository repository)
+    {
+        _logger = logger;
+        _repository = repository;
+    }
+
+    public async Task RunAsync()
+    {
+        _logger.LogInformation("Running use case in {{projectName}}!");
+        var model = await _repository.FindByNameAsync("Test");
+        _logger.LogInformation("Model: {Name}", model.Name);
+    }
+}
+
+public static class UseCaseServiceCollectionExtensions
+{
+    public static IServiceCollection AddUseCases(this IServiceCollection services)
+    {
+        services.AddTransient<IMyUseCase, MyUseCase>();
+        return services;
+    }
+}
