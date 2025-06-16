@@ -1,0 +1,33 @@
+using {{projectName}}.Repositories.Interfaces;
+using {{projectName}}.Repositories.Implementations;
+using {{projectName}}.UseCases.Interfaces;
+using {{projectName}}.UseCases.Implementations;
+using {{projectName}}.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Dependency Injection
+builder.Services.AddScoped<IExampleRepository, ExampleRepository>();
+builder.Services.AddScoped<IRepositoryManagement, RepositoryManagement>();
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IExampleUseCase, ExampleUseCase>();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+// Exemplo de endpoint
+app.MapGet("/health", () => "API is running!");
+
+app.Run();
